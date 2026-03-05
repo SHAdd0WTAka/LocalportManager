@@ -19,7 +19,7 @@ setup(
         "Development Status :: 4 - Beta",
         "Intended Audience :: Developers",
         "Topic :: Internet :: WWW/HTTP :: HTTP Servers",
-        "Topic :: Software Development :: Tools",
+        "Topic :: Software Development :: Build Tools",
         "Topic :: System :: Networking",
         "License :: OSI Approved :: MIT License",
         "Programming Language :: Python :: 3",
