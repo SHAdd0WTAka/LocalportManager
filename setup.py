@@ -8,7 +8,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="localportmanager",
-    version="1.0.0",
+    version="1.0.3",
     author="SHAdd0WTAka",
     description="Zero-dependency local reverse proxy for managing services on dynamic ports",
     long_description=long_description,

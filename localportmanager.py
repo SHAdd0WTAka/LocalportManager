@@ -30,7 +30,7 @@ from urllib.error import URLError
 from typing import Optional, Dict
 
 
-__version__ = "1.0.0"
+__version__ = "1.0.3"
 __author__ = "SHAdd0WTAka"
 
 
