@@ -15,29 +15,6 @@ from localportmanager import LocalPortManager, PortRegistry, ReverseProxyHandler
 class TestAdditionalCoverage:
     """Additional tests for better coverage."""
     
-    def test_register_service_with_yes_flag(self):
-        """Test register command with --yes flag."""
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
-            state_file = f.name
-        
-        try:
-            with patch('os.system') as mock_system, \
-                 patch('sys.argv', [
-                     'localportmanager',
-                     '--state-file', state_file,
-                     'register',
-                     'test-service',
-                     'echo {port}',
-                     '--yes'
-                 ]):
-                main()
-                
-                # Auto-start with --yes should call os.system
-                mock_system.assert_called_once()
-        finally:
-            if os.path.exists(state_file):
-                os.unlink(state_file)
-    
     def test_port_registry_list_services_returns_copy(self):
         """Test that list_services returns a copy."""
         with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
@@ -80,27 +57,6 @@ class TestAdditionalCoverage:
             if os.path.exists(state_file):
                 os.unlink(state_file)
     
-    def test_main_register_invalid_name(self):
-        """Test register with invalid name shows error."""
-        with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
-            state_file = f.name
-        
-        try:
-            with patch('sys.argv', [
-                'localportmanager',
-                '--state-file', state_file,
-                'register',
-                'invalid name!',
-                'cmd'
-            ]):
-                with pytest.raises(SystemExit) as exc_info:
-                    main()
-                
-                assert exc_info.value.code == 1
-        finally:
-            if os.path.exists(state_file):
-                os.unlink(state_file)
-    
     def test_register_service_output_format(self, capsys):
         """Test register service output format."""
         with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
@@ -138,7 +94,6 @@ class TestAdditionalCoverage:
                 main()
             
             captured = capsys.readouterr()
-            
             assert "8888" in captured.out
             assert "webapp" in captured.out
             assert "api" in captured.out

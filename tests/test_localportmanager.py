@@ -166,6 +166,7 @@ class TestMain:
         """Test register command."""
         with tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False) as f:
             state_file = f.name
+            f.write('{}')  # Write empty JSON object
         
         try:
             with patch('builtins.input', return_value='n'), \
