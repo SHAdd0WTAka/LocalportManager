@@ -3,6 +3,10 @@
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Zero Dependencies](https://img.shields.io/badge/dependencies-zero-green.svg)](https://github.com/SHAdd0WTAka/LocalportManager)
+[![CI](https://github.com/SHAdd0WTAka/LocalportManager/actions/workflows/ci.yml/badge.svg)](https://github.com/SHAdd0WTAka/LocalportManager/actions)
+[![Coverage](https://img.shields.io/badge/coverage-80%25-brightgreen.svg)](https://github.com/SHAdd0WTAka/LocalportManager)
+[![PyPI](https://img.shields.io/badge/pypi-v1.0.0-blue.svg)](https://pypi.org/project/localportmanager/)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 A lightweight, zero-dependency local reverse proxy for managing multiple services on dynamic ports. Perfect for development environments, penetration testing frameworks, and microservice development.
 
