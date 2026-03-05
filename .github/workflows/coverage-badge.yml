@@ -29,10 +29,8 @@ jobs:
       run: |
         coverage-badge -o coverage.svg -f
     
-    - name: Commit badge
-      run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
-        git add coverage.svg
-        git diff --quiet && git diff --staged --quiet || git commit -m "Update coverage badge"
-        git push
+    - name: Upload badge artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-badge
+        path: coverage.svg
