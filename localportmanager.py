@@ -42,7 +42,7 @@ class PortRegistry:
     persistence across restarts.
     """
 
-    def __init__(self, state_file: str = "/tmp/localportmanager_registry.json"  # nosec B108):
+    def __init__(self, state_file: str = "/tmp/localportmanager_registry.json"):  # nosec B108
         self.state_file = state_file
         self.lock = threading.Lock()
         self.mappings: Dict[str, int] = self._load()
